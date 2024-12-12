@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contact Book</h1>
+    <input type="text" id="search" placeholder="search..."/>
+    <button type="button" onclick="search()">Search</button>
+    <p id="result"></p>
+
+    <script>
+        const contacts={
+            punam:"9925822629",
+            rohit:"9823456567",
+            priya:"8656789021",
+            Shruti:"7834564326",
+        }
+
+        function search(){
+            const searchInput=document.getElementById("search");
+            const query=searchInput.value.toLowerCase();
+
+            const mobile=contacts[query]
+
+            const result=document.getElementById("result");
+
+            if(mobile){
+                result.innerText=`Mobile number of ${query} is ${mobile}`;
+
+            }
+            else{
+                result.innerText=`contact not found`;
+            }
+        }
+    </script>
+</body>
+</html>
